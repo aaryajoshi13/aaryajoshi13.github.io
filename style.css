@@ -6,12 +6,12 @@
 
 body{
     font-family: Inter, sans-serif;
-    background-color:#BAB2B2;
+    background-color:#eaeaea;
     color:#1D1D1F;
 }
 
 footer{
-    background-color: #503757;
+    background-color: #111112;
     color:white;
     padding: 20px 20px;
     margin-top:100px;
@@ -56,12 +56,16 @@ footer p{
 }
 
 header{
-    background: rgba(121, 123, 132, .9);
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #e5e5e5;
     backdrop-filter: blur(20px);
-    position:sticky;
-    top:0;
-    z-index:1000;
     padding:15px 0;
+}
+
+#navbar{
+    position: sticky;
+    top: 0;
+    z-index: 10000;
 }
 
 nav{
@@ -93,7 +97,7 @@ nav ul{
 
 .logo{
     text-decoration: none;
-    color: white;
+    color: #1D1D1F;
     font-size:16px;
     font-weight: 700;
 }
@@ -104,7 +108,7 @@ nav ul{
     transform: translateX(-50);
 }
 nav a{
-    color:white;
+    color:#1D1D1F;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -116,14 +120,25 @@ nav a:hover{
     opacity: .6;
 }
 
-.hero{
+.hero {
     min-height: 85vh;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 60px 40px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    padding:0 20px;
+
+    gap: 80px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
 }
 
 .greeting{
@@ -154,19 +169,43 @@ nav a:hover{
     margin-bottom:40px;
 }
 
-.hero-buttons{
+.hero-buttons {
     display: flex;
-    justify-content: center;
-    gap:24px;
+    justify-content: flex-start;
+    gap: 24px;
     margin-top: 40px;
 }
 
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex;
+    transform: translateX(50px);
+}
+
+.hero-image img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 12px 12px 0 #d2d2d7;
+}
+
+.hero-image {
+    transform: translateX(30px);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: translateX(30px) translateY(-5px);
+}
+
 .primary-btn{
-    background:#503757;
+    background:#306ECA;
     color:white;
     padding:10px 20px;
     text-decoration:none;
-    border:2px solid #503757;
+    border:2px solid #306ECA;
     border-radius:0px;
     font-weight:600;
     transition:all .3s ease;
@@ -174,13 +213,13 @@ nav a:hover{
 
 .primary-btn:hover{
     background:transparent;
-    color:#503757;
+    color:#306ECA;
 }
 
 .secondary-btn{
-    background:#503757;
+    background:#306ECA;
     color:white;
-    border:2px solid #503757;
+    border:2px solid #306ECA;
     padding:10px 20px;
     border-radius:0px;
     text-decoration:none;
@@ -190,7 +229,7 @@ nav a:hover{
 
 .secondary-btn:hover{
     background:transparent;
-    color:#503757;
+    color:#306ECA;
 }
 
 .primary-btn:hover,
