@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 70px;
+}
+
 body{
     font-family: Inter, sans-serif;
     background-color:#eaeaea;
@@ -28,6 +36,7 @@ footer h2{
     margin-bottom:15px;
     font-weight: 600;
 }
+
 
 footer p{
     line-height:1.7;
@@ -235,9 +244,7 @@ nav a:hover{
     box-shadow:0 8px 20px rgba(80,55,87,.15);
 }
 
-html{
-    scroll-behavior: smooth;
-}
+
 
 
 .about-section {
@@ -288,9 +295,117 @@ html{
 .about-content p{
     font-size: 18px;
     line-height: 1.6;
-    max-width: 550px;
+    max-width: 100% ;
 }
 
-section {
-    scroll-margin-top: 70px;
+@media (max-width: 768px) {
+
+
+    nav {
+        grid-template-columns: auto 1fr;
+        height: auto;
+        padding: 0 20px;
+    }
+
+    .nav-center {
+        justify-self: end;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        padding: 70px 25px;
+        gap: 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-image {
+        transform: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image:hover {
+        transform: translateY(-5px);
+    }
+
+    .hero-image img {
+        width: min(280px, 85vw);
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+
+    .about-section {
+        min-height: auto;
+        flex-direction: column;
+        padding: 80px 25px;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .about-image {
+        transform: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-image:hover {
+        transform: translateY(-5px);
+    }
+
+    .about-image img {
+        width: min(280px, 85vw);
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .about-content {
+        transform: none;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+    .about-content p {
+        font-size: 17px;
+    }
+
+
+    .footer-links a {
+        margin: 0 8px;
+    }
 }
