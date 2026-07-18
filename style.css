@@ -126,7 +126,6 @@ nav a{
 }
 
 nav a:hover{
-    color:BAB2B2;
     opacity: .6;
 }
 
@@ -190,7 +189,7 @@ nav a:hover{
     flex: 1;
     display: flex;
     justify-content: center;
-    transform: translateX(50px);
+    transform: translateX(30px);
 }
 
 .hero-image img {
@@ -202,9 +201,6 @@ nav a:hover{
     transition: transform 0.3s ease;
 }
 
-.hero-image {
-    transform: translateX(30px);
-}
 
 .hero-image img:hover {
     transform: translateY(-5px);
@@ -457,10 +453,7 @@ nav a:hover{
     gap: 100px;
 }
 
-.contact-label {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
+
 
 .contact-heading h2 {
     font-size: 40px;
@@ -523,6 +516,22 @@ nav a:hover{
     transform: rotate(1deg) scale(1.1);
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #1D1D1F;
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
 
 @media (max-width: 1024px) {
 
@@ -534,10 +543,6 @@ nav a:hover{
 
     .nav-center {
         justify-self: end;
-    }
-
-    .nav-right {
-        display: none;
     }
 
     nav ul {
@@ -593,6 +598,9 @@ nav a:hover{
 
 
     header {
+        position:sticky;
+        top:0;
+        z-index:10000;
         padding: 14px 0;
     }
 
@@ -603,9 +611,57 @@ nav a:hover{
         padding: 0 20px;
     }
 
-    nav ul {
-        gap: 15px;
+    nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     }
+
+    .nav-right {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-center {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        background-color: #FFFFFF;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-center.active {
+        max-height: 350px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 15px 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 14px;
+        font-size: 15px;
+    }
+
 
     nav a {
         font-size: 13px;
